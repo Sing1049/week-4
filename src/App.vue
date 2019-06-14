@@ -1,7 +1,17 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <img src="./assets/logo.png">
+    <el-dialog :visible.sync="openDiag">
+    <div>
+      <p>
+        If Element is successfully added to this project, you'll see an
+        <code v-text="'<el-button>'"></code>
+        below
+      </p>
+    </div>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
+    </el-dialog>
+     <el-button type="primary" >Welcome</el-button>
   </div>
 </template>
 
@@ -12,6 +22,11 @@ export default {
   name: 'app',
   components: {
     HelloWorld
+  },
+  data : function () {
+    return  {
+      visible: true
+    }
   }
 }
 </script>
